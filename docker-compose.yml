@@ -1,0 +1,15 @@
+services:
+  homer:
+    hostname: homer
+    container_name: homer
+    image: b4bz/homer:latest
+    restart: unless-stopped
+    tty: true
+    user: 1000:1000
+    environment:
+      - INIT_ASSETS=1
+    volumes:
+      - ./assets:/www/assets
+    ports:
+      - 8080:8080
+
